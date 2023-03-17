@@ -6,7 +6,6 @@ import (
 	"bytes"
 	"encoding/json"
 	"errors"
-	"fmt"
 	"net/http"
 	"net/http/httptest"
 	"testing"
@@ -47,8 +46,7 @@ func TestCreateUserHandlerWhenUnableToCreateUser(t *testing.T){
 		Email: "test@example.com",
 		Password: "Test@3_5",
 	}
-	b,err:=json.Marshal(newUser)
-	fmt.Println("b err: ",err)
+	b,_:=json.Marshal(newUser)
 	body := bytes.NewBuffer(b)
 	req, _ := http.NewRequest(http.MethodPost, "/user",body)
 	respR := httptest.NewRecorder()
@@ -74,8 +72,7 @@ func TestCreateUserHandler(t *testing.T){
 		Email: "test@example.com",
 		Password: "Test@3_5",
 	}
-	b,err:=json.Marshal(newUser)
-	fmt.Println("b err: ",err)
+	b,_:=json.Marshal(newUser)
 	body := bytes.NewBuffer(b)
 	req, _ := http.NewRequest(http.MethodPost, "/user",body)
 	respR := httptest.NewRecorder()

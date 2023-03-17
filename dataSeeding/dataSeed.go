@@ -12,4 +12,5 @@ func init() {
 
 func main() {
 	dataDump.UserData()
+	dataDump.JobsData()
 }
