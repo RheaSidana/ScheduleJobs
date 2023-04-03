@@ -26,7 +26,7 @@ func TestCreateJobHandlerWhenEmptyJob(t *testing.T){
 	req, _ := http.NewRequest(http.MethodPost, "/job",body)
 	respR := httptest.NewRecorder()
 	expectedJob := newJob
-	repo.On("Create", newJob).Return(model.Job{},errors.New("Empty User JSON."))
+	repo.On("Create", newJob).Return(model.Job{},errors.New("Empty Job JSON."))
 
 	actualJob,_ :=  repo.Create(newJob)
 	r.ServeHTTP(respR, req)
@@ -51,7 +51,7 @@ func TestCreateJobHandlerWhenUnableToCreateJob(t *testing.T){
 	respR := httptest.NewRecorder()
 	expectedJob := newJob
 	expectedJob.ID = 1
-	repo.On("Create", newJob).Return(model.Job{},errors.New("Error while creating user"))
+	repo.On("Create", newJob).Return(model.Job{},errors.New("Error while creating job"))
 
 	actualJob,_ :=  repo.Create(newJob)
 	r.ServeHTTP(respR, req)
@@ -60,7 +60,7 @@ func TestCreateJobHandlerWhenUnableToCreateJob(t *testing.T){
 	assert.NotEqual(t,expectedJob, actualJob)
 }
 
-func TestCreateUserHandler(t *testing.T){
+func TestCreateJobHandler(t *testing.T){
 	repo := new(mocks.Repository)
 	handler := Handler{repository: repo}
 	gin.SetMode(gin.TestMode)

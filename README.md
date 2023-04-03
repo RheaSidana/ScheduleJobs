@@ -8,7 +8,7 @@
 <h4> &nbsp;&nbsp;&nbsp;&nbsp; 1. install postgres: brew install postgresql</h4>
 <h4> &nbsp;&nbsp;&nbsp;&nbsp; 2. start/stop postgres service: brew services start/stop postgresql</h4>
 <h4> &nbsp;&nbsp;&nbsp;&nbsp; 3. psql postgres</h4>
-<h4> &nbsp;&nbsp;&nbsp;&nbsp; 4. add postgres password: \password {password};</h4>
+<h4> &nbsp;&nbsp;&nbsp;&nbsp; 4. add postgres password: \password {password};</h4><br/>
 <h4> &nbsp;&nbsp;&nbsp; (Windows)</h4>
 <h4> &nbsp;&nbsp;&nbsp;&nbsp; 1. install postgres: [Link text Here](https://www.postgresql.org/download/windows/)</h4>
 <h4> &nbsp;&nbsp;&nbsp;&nbsp; 2. port: 5432 (defaut), user: postgres (defaut)</h4>
@@ -16,7 +16,7 @@
 <h4> &nbsp;&nbsp;&nbsp;&nbsp; 4. open psql sql shell</h4>
 <h4> &nbsp;&nbsp;&nbsp; 5. create orm db: CREATE database job_scheduling;</h4>
 <h4> &nbsp;&nbsp;&nbsp; 6. connect to db: \c "db"</h4>
-<h4> &nbsp;&nbsp;&nbsp; 7. Edit .env file with postgres details </h4>
+<h4> &nbsp;&nbsp;&nbsp; 7. Edit .env file with postgres details </h4><br/>
 <h4>  4. Migrate Tables (run command: ### go run .\migrations\migrate.go) </h4>
 <h4> &nbsp;&nbsp;&nbsp; View DB Table Schemas: ### \d "tablename" </h4>
 <h4>  5. Seed Data to the Table (run command: ### go run .\dataSeeding\dataSeed.go)</h4>
